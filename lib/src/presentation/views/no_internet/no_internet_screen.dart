@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:internet_connection_checker/internet_connection_checker.dart';
 import 'package:quran_ai/src/config/themes/app_colors.dart';
-import 'package:quran_ai/src/presentation/views/home/home_screen.dart';
+import 'package:quran_ai/src/presentation/views/main/main_screen.dart';
 
 class NoInternetScreen extends StatefulWidget {
   const NoInternetScreen({super.key});
@@ -21,7 +21,7 @@ class _NoInternetScreenState extends State<NoInternetScreen> {
       (event) {
         if (event == InternetConnectionStatus.connected) {
           if (!mounted) return;
-          context.go(HomeScreen.routeName);
+          context.go(MainScreen.routeName);
         }
       },
     );
@@ -41,12 +41,12 @@ class _NoInternetScreenState extends State<NoInternetScreen> {
                 if (!result) {
                 } else {
                   if (context.mounted) {
-                    context.go(HomeScreen.routeName);
+                    context.go(MainScreen.routeName);
                   }
                 }
               },
               style: ElevatedButton.styleFrom(
-                backgroundColor: AppColors.assets,
+                backgroundColor: AppColors.x004B40,
                 elevation: 0,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(12),

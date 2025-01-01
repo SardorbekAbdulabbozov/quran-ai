@@ -3,9 +3,10 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:quran_ai/src/domain/repositories/remote_repository.dart';
 import 'package:quran_ai/src/locator.dart';
-import 'package:quran_ai/src/presentation/blocs/home/home_bloc.dart';
+import 'package:quran_ai/src/presentation/blocs/main/main_bloc.dart';
+import 'package:quran_ai/src/presentation/blocs/quran/quran_view_bloc.dart';
 import 'package:quran_ai/src/presentation/blocs/surah/surah_bloc.dart';
-import 'package:quran_ai/src/presentation/views/home/home_screen.dart';
+import 'package:quran_ai/src/presentation/views/main/main_screen.dart';
 import 'package:quran_ai/src/presentation/views/no_internet/no_internet_screen.dart';
 import 'package:quran_ai/src/presentation/views/splash/splash_screen.dart';
 import 'package:flutter/material.dart';
@@ -43,18 +44,24 @@ final GoRouter router = GoRouter(
       builder: (context, state) => const NoInternetScreen(),
     ),
 
-    /// home
+    /// main
     GoRoute(
-      name: HomeScreen.routeName,
-      path: HomeScreen.routeName,
+      name: MainScreen.routeName,
+      path: MainScreen.routeName,
       builder: (context, state) => MultiBlocProvider(
         providers: [
           BlocProvider(
-            create: (_) =>
-                HomeBloc(locator.get<RemoteRepository>())..add(GetAllSurahs()),
+            create: (_) => MainBloc(
+              locator.get<RemoteRepository>(),
+            ),
+          ),
+          BlocProvider(
+            create: (_) => QuranViewBloc(
+              locator.get<RemoteRepository>(),
+            )..add(GetAllSurahs()),
           ),
         ],
-        child: const HomeScreen(),
+        child: const MainScreen(),
       ),
     ),
 

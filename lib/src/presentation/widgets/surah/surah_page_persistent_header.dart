@@ -34,7 +34,7 @@ class SurahPagePersistentHeader extends SliverPersistentHeaderDelegate {
             gradient: const LinearGradient(
               begin: Alignment.topLeft,
               end: Alignment.bottomRight,
-              colors: [AppColors.c004B40, AppColors.c87D1A4],
+              colors: [AppColors.x004B40, AppColors.x87D1A4],
             ),
           ),
         ),
@@ -49,7 +49,10 @@ class SurahPagePersistentHeader extends SliverPersistentHeaderDelegate {
                 children: [
                   Text(
                     surahName,
-                    style: AppTextStyles.surahNameAppBarText,
+                    style: AppTextStyles.s24w700.copyWith(
+                      fontFamily: 'Amiri',
+                      color: AppColors.xFFFFFF,
+                    ),
                   ),
                   if (shrinkPercentage == 0)
                     Divider(
@@ -61,7 +64,9 @@ class SurahPagePersistentHeader extends SliverPersistentHeaderDelegate {
                   if (shrinkPercentage == 0)
                     Text(
                       AppConstants.surahNamesUz[surahNumber - 1],
-                      style: AppTextStyles.surahNameAppBarText,
+                      style: AppTextStyles.s24w700.copyWith(
+                        color: AppColors.xFFFFFF,
+                      ),
                     ),
                 ],
               ),

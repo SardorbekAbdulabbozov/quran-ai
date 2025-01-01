@@ -20,7 +20,7 @@ class _QuranAppState extends State<QuranApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
-      title: 'Qur`oni Karim',
+      title: 'Quran AI',
       debugShowCheckedModeBanner: false,
       theme: AppTheme.appTheme,
       scaffoldMessengerKey: scaffoldMessengerKey,
