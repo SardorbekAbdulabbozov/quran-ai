@@ -22,10 +22,10 @@ class QuranView extends StatelessWidget {
                 return [
                   SliverAppBar(
                     surfaceTintColor: Colors.transparent,
-                    backgroundColor: AppColors.xFFFFFF.withOpacity(0.9),
+                    backgroundColor: AppColors.xFFFFFF,
                     collapsedHeight: kToolbarHeight,
-                    toolbarHeight: 50,
                     pinned: true,
+                    titleSpacing: 12,
                     title: ClipRRect(
                       borderRadius: BorderRadius.circular(100),
                       child: ColoredBox(

@@ -1,5 +1,5 @@
 class SingleSurahResponse {
-  int? code;
+  num? code;
   String? status;
   Surah? surah;
 
@@ -23,12 +23,12 @@ class SingleSurahResponse {
 }
 
 class Surah {
-  int? number;
+  num? number;
   String? name;
   String? englishName;
   String? englishNameTranslation;
   String? revelationType;
-  int? numberOfAyahs;
+  num? numberOfAyahs;
   List<Ayah>? ayahs;
   Edition? edition;
 
@@ -78,14 +78,14 @@ class Surah {
 }
 
 class Ayah {
-  int? number;
+  num? number;
   String? text;
-  int? numberInSurah;
-  int? juz;
-  int? manzil;
-  int? page;
-  int? ruku;
-  int? hizbQuarter;
+  num? numberInSurah;
+  num? juz;
+  num? manzil;
+  num? page;
+  num? ruku;
+  num? hizbQuarter;
   bool? sajda;
 
   Ayah(

@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:hive_flutter/adapters.dart';
 import 'package:quran_ai/src/config/router/router.dart';
 import 'package:quran_ai/src/config/themes/app_theme.dart';
 import 'package:quran_ai/src/locator.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await Hive.initFlutter();
   await initializeDependencies();
   runApp(const QuranApp());
 }

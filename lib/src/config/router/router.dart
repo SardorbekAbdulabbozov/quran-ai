@@ -3,9 +3,11 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:quran_ai/src/domain/repositories/remote_repository.dart';
 import 'package:quran_ai/src/locator.dart';
+import 'package:quran_ai/src/presentation/blocs/chat/chat_bloc.dart';
 import 'package:quran_ai/src/presentation/blocs/main/main_bloc.dart';
 import 'package:quran_ai/src/presentation/blocs/quran/quran_view_bloc.dart';
 import 'package:quran_ai/src/presentation/blocs/surah/surah_bloc.dart';
+import 'package:quran_ai/src/presentation/views/chat/chat_intro_view.dart';
 import 'package:quran_ai/src/presentation/views/main/main_screen.dart';
 import 'package:quran_ai/src/presentation/views/no_internet/no_internet_screen.dart';
 import 'package:quran_ai/src/presentation/views/splash/splash_screen.dart';
@@ -60,6 +62,9 @@ final GoRouter router = GoRouter(
               locator.get<RemoteRepository>(),
             )..add(GetAllSurahs()),
           ),
+          BlocProvider(
+            create: (_) => ChatBloc(),
+          ),
         ],
         child: const MainScreen(),
       ),
@@ -89,6 +94,13 @@ final GoRouter router = GoRouter(
               : '',
         ),
       ),
+    ),
+
+    GoRoute(
+      parentNavigatorKey: rootKey,
+      path: ChatIntroScreen.routeName,
+      name: ChatIntroScreen.routeName,
+      builder: (context, state) => const ChatIntroScreen(),
     ),
   ],
 );

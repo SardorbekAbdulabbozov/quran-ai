@@ -22,10 +22,37 @@ class AppTextStyles {
     fontWeight: FontWeight.w500,
   );
 
+  static TextStyle s16w600 = const TextStyle(
+    fontFamily: 'Poppins',
+    fontSize: 16,
+    fontWeight: FontWeight.w600,
+  );
+
   static const s16w400 = TextStyle(
     fontFamily: 'Poppins',
     fontSize: 16,
     fontWeight: FontWeight.w400,
+    color: AppColors.x004B40,
+  );
+
+  static const s15w400 = TextStyle(
+    fontFamily: 'Poppins',
+    fontSize: 15,
+    fontWeight: FontWeight.w400,
+    color: AppColors.x004B40,
+  );
+
+  static const s15w500 = TextStyle(
+    fontFamily: 'Poppins',
+    fontSize: 15,
+    fontWeight: FontWeight.w500,
+    color: AppColors.x004B40,
+  );
+
+    static const s15w600 = TextStyle(
+    fontFamily: 'Poppins',
+    fontSize: 15,
+    fontWeight: FontWeight.w600,
     color: AppColors.x004B40,
   );
 
@@ -57,6 +84,20 @@ class AppTextStyles {
     color: AppColors.x004B40,
   );
 
+  static const s18w600 = TextStyle(
+    fontFamily: 'Poppins',
+    fontSize: 18,
+    fontWeight: FontWeight.w600,
+    color: AppColors.x004B40,
+  );
+
+  static const s18w700 = TextStyle(
+    fontFamily: 'Poppins',
+    fontSize: 18,
+    fontWeight: FontWeight.w700,
+    color: AppColors.x004B40,
+  );
+
   static const s12w400 = TextStyle(
     fontFamily: 'Poppins',
     fontSize: 12,
@@ -68,6 +109,13 @@ class AppTextStyles {
     fontFamily: 'Poppins',
     fontSize: 20,
     fontWeight: FontWeight.w700,
+    color: AppColors.x004B40,
+  );
+
+  static const s20w500 = TextStyle(
+    fontFamily: 'Poppins',
+    fontSize: 20,
+    fontWeight: FontWeight.w500,
     color: AppColors.x004B40,
   );
 

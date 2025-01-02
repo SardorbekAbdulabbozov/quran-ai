@@ -1,9 +1,14 @@
 // ignore_for_file: deprecated_member_use
 
+import 'package:go_router/go_router.dart';
 import 'package:quran_ai/src/config/themes/app_colors.dart';
 import 'package:quran_ai/src/config/themes/app_text_styles.dart';
+import 'package:quran_ai/src/data/data_sources/local/hive/storage_service.dart';
 import 'package:quran_ai/src/presentation/blocs/main/main_bloc.dart';
+import 'package:quran_ai/src/presentation/views/chat/chat_intro_view.dart';
+import 'package:quran_ai/src/presentation/views/chat/chat_view.dart';
 import 'package:quran_ai/src/presentation/views/home/home_view.dart';
+import 'package:quran_ai/src/presentation/views/profile/profile_view.dart';
 import 'package:quran_ai/src/presentation/views/quran/quran_view.dart';
 import 'package:quran_ai/src/utils/components/loading_builder.dart';
 import 'package:flutter/material.dart';
@@ -24,6 +29,7 @@ class MainScreen extends StatelessWidget {
       builder: (context, state) {
         return Scaffold(
           appBar: AppBar(
+            centerTitle: true,
             title: const Text(
               appName,
               style: AppTextStyles.s20w700,
@@ -45,8 +51,8 @@ class MainScreen extends StatelessWidget {
               children: const [
                 HomeView(),
                 QuranView(),
-                SizedBox.shrink(),
-                SizedBox.shrink(),
+                ChatView(),
+                ProfileView(),
               ],
             ),
           ),
@@ -59,7 +65,13 @@ class MainScreen extends StatelessWidget {
               ),
               BottomNavigationBar(
                 currentIndex: state.index,
-                onTap: (index) => bloc.add(ChangeIndex(index)),
+                onTap: (index) {
+                  if (!StorageService.instance.isChatIntroShown() &&
+                      index == 2) {
+                    context.pushNamed(ChatIntroScreen.routeName);
+                  }
+                  bloc.add(ChangeIndex(index));
+                },
                 showSelectedLabels: false,
                 showUnselectedLabels: false,
                 backgroundColor: AppColors.xFFFFFF,

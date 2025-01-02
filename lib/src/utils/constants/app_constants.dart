@@ -155,4 +155,6 @@ class AppConstants {
     Juz(startingSurahName: 'Mulk', startingAyahNumber: '1'), //29
     Juz(startingSurahName: 'Naba`', startingAyahNumber: '1'), //30
   ];
+
+  static const totalNumberOfPages = 604;
 }

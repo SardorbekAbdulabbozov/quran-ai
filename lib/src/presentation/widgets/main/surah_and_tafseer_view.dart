@@ -24,6 +24,7 @@ class SurahsAndTafseerView extends StatelessWidget {
               extra: {
                 "surahIndex": "${index + 1}",
                 "surahName": surahs[index].name ?? '',
+                // "pageNumber": surahs[index]. ?? '',
               },
             );
           },
